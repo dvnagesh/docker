@@ -1,0 +1,27 @@
+docker run --name postgres -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=docker -p 5432:5432 -d docker-virtual-repo.artifactory.lss.emc.com/postgres:latest
+
+echo "
+CREATE ROLE stashuser WITH LOGIN PASSWORD 'jellyfish' VALID UNTIL 'infinity';
+CREATE DATABASE stash WITH ENCODING='UTF8' OWNER=stashuser TEMPLATE=template0 CONNECTION LIMIT=-1;
+CREATE ROLE jiradbuser WITH LOGIN PASSWORD 'jellyfish' VALID UNTIL 'infinity';
+CREATE DATABASE jiradb WITH ENCODING 'UNICODE' TEMPLATE=template0;" \
+| PGPASSWORD="docker" psql -h $PSQL_IP -p $PSQL_PORT -d docker -U docker -w
+
+docker run -d --name stash --link postgres:db -p 7990:7990 docker-virtual-repo.artifactory.lss.emc.com/stash:3.0.1
+
+docker run -d --name jira --link postgres:db --link stash:stash -p 8080:8080 docker-virtual-repo.artifactory.lss.emc.com/jira:6.2.5
+
+
+
+docker run --name postgres -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=docker -p 5432:5432 -d postgres
+echo "
+CREATE ROLE stashuser WITH LOGIN PASSWORD 'jellyfish' VALID UNTIL 'infinity';
+CREATE DATABASE stash WITH ENCODING='UTF8' OWNER=stashuser TEMPLATE=template0 CONNECTION LIMIT=-1;
+CREATE ROLE jiradbuser WITH LOGIN PASSWORD 'jellyfish' VALID UNTIL 'infinity';
+CREATE DATABASE jiradb WITH ENCODING 'UNICODE' TEMPLATE=template0;" \
+| PGPASSWORD="docker" psql -h $PSQL_IP -p $PSQL_PORT -d docker -U docker -w
+
+docker run -d --name stash --link postgres:db -p 7990:7990 dvnagesh/stash-3.0.1
+
+docker run -d --name jira --link postgres:db --link stash:stash -p 8080:8080 dvnagesh/jira:6.2.5
+

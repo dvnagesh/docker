@@ -1,0 +1,14 @@
+docker run --name postgres -e POSTGRES_USER=jiradb -e POSTGRES_PASSWORD=jiradb -e POSTGRES_DB=jiradb -p 5432:5432 -d docker-virtual-repo.artifactory.lss.emc.com/postgres:9.3
+docker run --name jira -e POSTGRES_USER=jiradb -e POSTGRES_PASSWORD=jiradb -e POSTGRES_DB=jiradb -e DB_HOST=liahl014.lss.emc.com -e DB_PORT=5432 -p 8080:8080 -v jirahome:/opt/jira-home -it docker-virtual-repo.artifactory.lss.emc.com/jira-centos:7.2.4 bash
+
+docker run --name postgres -e POSTGRES_USER=confluencedb -e POSTGRES_PASSWORD=confluencedb -e POSTGRES_DB=confluencedb -p 5432:5432 -d docker-virtual-repo.artifactory.lss.emc.com/postgres:9.3
+docker run --name confluence -e POSTGRES_USER=confluencedb -e POSTGRES_PASSWORD=confluencedb -e POSTGRES_DB=confluencedb -e DB_HOST=liahl014.lss.emc.com -e DB_PORT=5432 -p 8090:8090 -p 8091:8091 -v confluencehome:/opt/confluence-home -it docker-virtual-repo.artifactory.lss.emc.com/confluence-centos:5.10.8 bash
+
+Licnse
+AAABKg0ODAoPeNptkF9LwzAUxd/zKQK+6ENG29XaDQJqG3DSP2Ln3IMvMbvbAm06krS4b2+6Kk7xI
+ZDce865v5uLV9jgou3x1MNeMA+v56GPk2qJA8+PUApGaHmwslU0adW27kAJwJcV6B701dscs57XH
+R8EKNFwuqTcAh3sxPfJ1EPCGSdcWNkDtbqDsVBZri1ouuW1AeTCrZOwnMuabnrFd2D2t7vGPSeib
+dDPmLOITApQBpbHAxS8AZqUec6ek8VdhuqxtQJtBk+AXLCyoLjDZx8HqY9nlMFAWeodV9KMM1KWZ
+SxP0LjnIqX3D+tHUkVhTNarckaioFihihXUHZLFM+8mjkL0xePk2SL91TnhFl3zDrrcvhhHRYn/r
+f+f56nTYs8N/P3NT/jKi4YwLAIUMfplTXhn4PacNjO2Zdi/wMQdO9QCFBikt8tI5XyTWZ6kT3+6s
+HKTx9q0X02eu
