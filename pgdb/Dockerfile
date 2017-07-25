@@ -1,2 +1,2 @@
-FROM docker-virtual-repo.artifactory.lss.emc.com/postgres:9.3
+FROM postgres:9.3
 
