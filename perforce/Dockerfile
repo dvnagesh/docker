@@ -1,4 +1,4 @@
-FROM docker-virtual-repo.artifactory.lss.emc.com/centos72jdk8
+FROM centos72jdk8
 
 COPY install-perforce.sh /
 RUN /install-perforce.sh
