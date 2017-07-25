@@ -1,4 +1,4 @@
-FROM docker-virtual-repo.artifactory.lss.emc.com/altassian-base:latest
+FROM altassian-base:latest
 
 # Install Stash
 
