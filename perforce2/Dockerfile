@@ -1,4 +1,4 @@
-FROM docker-virtual-repo.artifactory.lss.emc.com/centos72jdk8
+FROM centos72jdk8
 
 COPY helix-versioning-engine.tgz /
 COPY install-perforce.sh /
