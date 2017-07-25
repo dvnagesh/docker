@@ -1,7 +1,7 @@
 # Basics
 #
-#FROM docker-virtual-repo.artifactory.lss.emc.com/altassian-base:latest
-FROM docker-virtual-repo.artifactory.lss.emc.com/atlassian-base:1.8
+#FROM altassian-base:latest
+FROM atlassian-base:1.8
 # Install Jira
 
 #ENV JIRA_VERSION 6.2.5
