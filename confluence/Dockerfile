@@ -1,4 +1,4 @@
-FROM docker-virtual-repo.artifactory.lss.emc.com/centos72jdk8
+FROM centos72jdk8
 ENV CONFLUENCE_VERSION "5.10.8"
 #DB_HOST
 #DB_PORT
