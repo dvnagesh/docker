@@ -1,4 +1,4 @@
-FROM docker-virtual-repo.artifactory.lss.emc.com/centos72jdk8
+FROM centos72jdk8
 ENV JIRA_VERSION 7.2.4
 #DB_HOST
 #DB_PORT
