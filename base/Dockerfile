@@ -1,6 +1,6 @@
 # Basics
 #
-FROM docker-virtual-repo.artifactory.lss.emc.com/ubuntu:14.04
+FROM ubuntu:14.04
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y git-core curl sudo xmlstarlet \
   software-properties-common python-software-properties
